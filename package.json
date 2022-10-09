@@ -1,0 +1,44 @@
+{
+  "name": "importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app",
+  "scripts": {
+    "start": "nodemon --exec ts-node-dev src/app",
+    "build": "webpack --config webpack.config.js",
+    "prod": "node dist/app",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint -c .eslintrc.js --ext .ts src"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "config-plus": "^0.0.4",
+    "dotenv": "^16.0.3",
+    "import-service": "^0.1.2",
+    "logger-core": "^0.3.0",
+    "mysql": "^2.18.1",
+    "mysql-core": "^0.1.16",
+    "onecore": "^0.0.40",
+    "query-core": "0.0.6",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "xvalidators": "^0.0.5"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.21",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.8.4",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
