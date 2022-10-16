@@ -17,6 +17,6 @@ export class UserTransformer extends Delimiter<User> {
 
 export class UserWriter extends SqlInserter<User> {
   constructor(db: DB) {
-    super(db.exec, 'users2', userModel, db.param);
+    super(db.exec, 'users1', userModel, db.param);
   }
 }

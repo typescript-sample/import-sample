@@ -2,8 +2,10 @@ node_modules
 .idea
 dist
 es6
+es5
 build
 debug.log
 .docker
 .cache
 .DS_Store
+log

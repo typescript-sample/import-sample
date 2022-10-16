@@ -13,13 +13,23 @@ export const config = {
     prefix: 'user_'
   },
   db: {
-    host: 'sql6.freesqldatabase.com',
+    host: '127.0.0.1',
     port: 3306,
-    user: 'sql6520711',
-    password: 'WvGUYNPsjy',
-    database: 'sql6520711',
+    user: 'root',
+    password: 'abcd1234',
+    database: 'masterdata',
     multipleStatements: true,
     connectionLimit: 10
+  },
+  error: {
+    directory: './log/',
+    prefix: 'error_',
+    suffix: '.txt'
+  },
+  info: {
+    directory: './log/',
+    prefix: 'log_',
+    suffix: '.txt'
   }
 };
 

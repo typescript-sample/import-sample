@@ -15,13 +15,12 @@
   "dependencies": {
     "config-plus": "^0.0.4",
     "dotenv": "^16.0.3",
-    "import-service": "^0.1.2",
+    "import-service": "^0.1.4",
     "logger-core": "^0.3.0",
     "mysql": "^2.18.1",
     "mysql-core": "^0.1.16",
-    "onecore": "^0.0.40",
+    "onecore": "0.0.41",
     "query-core": "0.0.6",
-    "webpack-bundle-analyzer": "^4.6.1",
     "xvalidators": "^0.0.5"
   },
   "devDependencies": {
@@ -38,6 +37,7 @@
     "typescript": "^4.8.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   }

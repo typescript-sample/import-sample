@@ -14,6 +14,6 @@ export class UserImportService extends ImportService<User> implements UserServic
     errorHandler: UserErrorHandler,
     exceptionHandler: ExceptionHandler,
   ) {
-    super(1, filename, read, transformer, writer, validator, errorHandler, exceptionHandler);
+    super(1, filename, read, transformer, writer, exceptionHandler, validator, errorHandler);
   }
 }
