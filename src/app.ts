@@ -1,7 +1,7 @@
 import { merge } from 'config-plus';
 import dotenv from 'dotenv';
 import fs from 'fs';
-import { createReader, ErrorHandler, ExceptionHandler, FileWriter, getFiles, getPrefix, NameChecker, timeToString } from 'import-service';
+import { createReader, ErrorHandler, ExceptionHandler, getFiles, getPrefix, LogWriter, NameChecker, timeToString } from 'import-service';
 import { createLogger } from 'logger-core';
 import { createPool } from 'mysql';
 import { PoolManager } from 'mysql-core';
@@ -13,8 +13,8 @@ dotenv.config();
 const conf = merge(config, process.env, env, process.env.ENV);
 
 const now = new Date();
-const errorWriter = new FileWriter(getPrefix(conf.error.prefix, now) + '_' + timeToString(now) + conf.error.suffix, conf.error.directory);
-const logWriter = new FileWriter(getPrefix(conf.info.prefix, now) + '_' + timeToString(now) + conf.info.suffix, conf.info.directory);
+const errorWriter = new LogWriter(getPrefix(conf.error.prefix, now) + '_' + timeToString(now) + conf.error.suffix, conf.error.directory);
+const logWriter = new LogWriter(getPrefix(conf.info.prefix, now) + '_' + timeToString(now) + conf.info.suffix, conf.info.directory);
 
 const logger = createLogger(conf.log, undefined, undefined, errorWriter.write, logWriter.write);
 const pool = createPool(conf.db);
