@@ -21,7 +21,7 @@
     "mysql-core": "^0.1.16",
     "onecore": "0.0.42",
     "query-core": "0.0.6",
-    "xvalidators": "0.0.6"
+    "xvalidators": "^0.0.8"
   },
   "devDependencies": {
     "@types/mysql": "^2.15.21",
