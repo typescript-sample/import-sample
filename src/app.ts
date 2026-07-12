@@ -3,9 +3,9 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import { createReader, ErrorHandler, ExceptionHandler, getFiles, getPrefix, LogWriter, NameChecker, timeToString } from 'import-service';
 import { createLogger } from 'logger-core';
-import { createPool } from 'mysql';
-import { PoolManager } from 'mysql-core';
-import { log } from 'query-core';
+import { createPool } from 'mysql2';
+import { PoolManager } from 'mysql2-core';
+import { log } from 'sql-core';
 import { config, env } from './config';
 import { User, UserImportService, UserTransformer, UserValidator, UserWriter } from './user';
 

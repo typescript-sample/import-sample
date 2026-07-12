@@ -1,6 +1,6 @@
 import { Delimiter } from 'import-service';
-import { DB, SqlInserter } from 'query-core';
-import { Validator } from 'xvalidators';
+import { DB, SqlInserter } from 'sql-core';
+import { Validator } from 'validation-core';
 import { User, userModel } from '../domain';
 
 export class UserValidator extends Validator<User> {
@@ -17,6 +17,6 @@ export class UserTransformer extends Delimiter<User> {
 
 export class UserWriter extends SqlInserter<User> {
   constructor(db: DB) {
-    super(db.exec, 'users1', userModel, db.param);
+    super(db.execute, 'users1', userModel, db.param);
   }
 }
