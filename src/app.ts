@@ -15,8 +15,7 @@ import {
 } from "import-service"
 import { createLogger } from "logger-core"
 import { createPool } from "mysql2"
-import { PoolManager } from "mysql2-core"
-import { SqlInserter } from "sql-core"
+import { MySQLWriter, PoolManager } from "mysql2-core"
 import { Validator } from "validation-core"
 import { config, environments } from "./config"
 import { User, userModel } from "./user"
@@ -38,7 +37,7 @@ const exceptionHandler = new ExceptionHandler<string>(logger.error)
 
 const validator = new Validator<User>(userModel)
 const tranformer = new FixedLengthTransformer<User>(userModel)
-const writer = new SqlInserter<User>(db.execute, "userimport", userModel, db.param, true)
+const writer = new MySQLWriter<User>(db.execute, "userimport", userModel, true)
 
 async function importDirectory(directory: string, check: (name: string) => boolean) {
   logger.info(`Start service ${conf.service}`)

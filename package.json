@@ -4,8 +4,9 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "start": "nodemon --exec ts-node-dev src/app",
+    "start": "node dist/app",
     "build": "webpack --config webpack.config.js",
+    "dev": "nodemon --exec ts-node-dev src/app",
     "prod": "node dist/app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c .eslintrc.js --ext .ts src"
@@ -15,12 +16,11 @@
   "dependencies": {
     "config-plus": "^0.0.8",
     "dotenv": "^17.4.2",
-    "import-service": "^0.2.2",
+    "import-service": "^0.2.5",
     "logger-core": "^0.3.2",
     "mysql2": "^3.23.0",
-    "mysql2-core": "^0.3.4",
-    "onecore": "^0.5.16",
-    "sql-core": "^0.1.4",
+    "mysql2-core": "^0.3.5",
+    "onecore": "^0.5.17",
     "validation-core": "^1.1.1"
   },
   "devDependencies": {

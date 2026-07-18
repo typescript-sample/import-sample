@@ -9,3 +9,7 @@ create table if not exists userimport (
 );
 
 create index idx_userimport_createddate on userimport(createddate);
+/*
+select * from userimport;
+truncate table userimport;
+*/

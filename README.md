@@ -91,9 +91,11 @@ src/
 ├── config.ts
 ├── user/
 │   ├── user.ts
-│   ├── user-model.ts
-│   ├── user-writer.ts
-│   └── ...
+│   ├── port.ts
+│   ├── transformer.ts
+│   ├── validator.ts
+│   ├── writer.ts
+│   └── service.ts
 └── ...
 ```
 
@@ -288,11 +290,13 @@ This sample demonstrates how to:
 
 # Related Projects
 
+- **config-plus** – Configuration library
+- **logger-core** – Logging library
+
 - **import-service** – Streaming import framework
 - **validation-core** – Validation framework
-- **sql-core** – SQL abstraction
 - **mysql2-core** – MySQL implementation
-- **config-plus** – Configuration library
+- **sql-core** – SQL abstraction
 
 ---
 
