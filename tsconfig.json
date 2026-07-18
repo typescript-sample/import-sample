@@ -2,11 +2,11 @@
   "compileOnSave": true,
   "compilerOptions": {
     "pretty": true,
-    "target": "es2017",
-    "baseUrl": "./src",
-    "outDir": "./es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "es6",
+    "rootDir": "./src",
+    "outDir": "./es6",
+    "module": "node16",
+    "moduleResolution": "node16",
     "strict": true,
     "sourceMap": false,
     "esModuleInterop": true,
@@ -14,12 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "removeComments": true,
+    "removeComments": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
