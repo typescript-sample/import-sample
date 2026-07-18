@@ -8,9 +8,9 @@ export class UserImportService extends ImportService<User, string> {
     read: AsyncIterable<string>,
     transformer: UserTransformer,
     writer: UserWriter,
+    exceptionHandler: ExceptionHandler<string>,
     validator: UserValidator,
     errorHandler: UserErrorHandler,
-    exceptionHandler: ExceptionHandler<string>,
   ) {
     super(1, filename, read, transformer, writer, exceptionHandler, validator, errorHandler)
   }

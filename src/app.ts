@@ -1,24 +1,13 @@
 import { merge } from "config-plus"
 import dotenv from "dotenv"
 import fs from "fs"
-import {
-  createReader,
-  ErrorHandler,
-  ExceptionHandler,
-  FixedLengthTransformer,
-  getFiles,
-  getPrefix,
-  ImportService,
-  LogWriter,
-  NameChecker,
-  timeToString,
-} from "import-service"
+import { createReader, ErrorHandler, ExceptionHandler, getFiles, getPrefix, LogWriter, NameChecker, timeToString } from "import-service"
 import { createLogger } from "logger-core"
 import { createPool } from "mysql2"
-import { MySQLWriter, PoolManager } from "mysql2-core"
-import { Validator } from "validation-core"
+import { PoolManager } from "mysql2-core"
 import { config, environments } from "./config"
-import { User, userModel } from "./user"
+import { User, UserImportService, UserValidator, UserWriter } from "./user"
+import { UserTransformer } from "./user/transformer"
 
 dotenv.config()
 const conf = merge(config, process.env, environments, process.env.ENV)
@@ -35,9 +24,9 @@ const checker = new NameChecker(getPrefix(conf.file.prefix, new Date(), -1), ".t
 const errorHandler = new ErrorHandler<User>(logger.error)
 const exceptionHandler = new ExceptionHandler<string>(logger.error)
 
-const validator = new Validator<User>(userModel)
-const tranformer = new FixedLengthTransformer<User>(userModel)
-const writer = new MySQLWriter<User>(db.execute, "userimport", userModel, true)
+const validator = new UserValidator()
+const tranformer = new UserTransformer()
+const writer = new UserWriter(db)
 
 async function importDirectory(directory: string, check: (name: string) => boolean) {
   logger.info(`Start service ${conf.service}`)
@@ -47,7 +36,7 @@ async function importDirectory(directory: string, check: (name: string) => boole
     console.log("file name " + file)
     const filename = `${directory}${file}`
     const read = await createReader(filename)
-    const importer = new ImportService<User, string>(1, file, read, tranformer, writer, exceptionHandler, validator, errorHandler)
+    const importer = new UserImportService(file, read, tranformer, writer, exceptionHandler, validator, errorHandler)
     logger.info(`Import '${filename}' file`)
     const res = await importer.import()
     logger.info(`Result of '${filename}' import: total: ${res.total}; success: ${res.success}; fail: ${res.total - res.success}`)
