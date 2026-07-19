@@ -14,10 +14,10 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "config-plus": "^0.0.8",
+    "config-plus": "^0.0.9",
     "dotenv": "^17.4.2",
     "import-service": "^0.2.5",
-    "logger-core": "^0.3.2",
+    "logger-core": "^0.3.3",
     "mysql2": "^3.23.1",
     "mysql2-core": "^0.3.6",
     "onecore": "^0.5.17",
