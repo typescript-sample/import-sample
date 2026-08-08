@@ -4,7 +4,7 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "start": "node dist/app",
+    "start": "nodemon --exec ts-node-dev src/app",
     "build": "webpack --config webpack.config.js",
     "dev": "nodemon --exec ts-node-dev src/app",
     "prod": "node dist/app",
