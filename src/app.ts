@@ -2,7 +2,7 @@ import { merge } from "config-plus"
 import dotenv from "dotenv"
 import fs from "fs"
 import { createReader, ErrorHandler, ExceptionHandler, getFiles, getPrefix, LogWriter, NameChecker, timeToString, toString } from "import-service"
-import { createLogger } from "logger-core"
+import { createFileLogger } from "logger-core"
 import { createPool } from "mysql2"
 import { PoolManager } from "mysql2-core"
 import { config, environments } from "./config"
@@ -16,7 +16,7 @@ const now = new Date()
 const errorWriter = new LogWriter(getPrefix(cfg.error.prefix, now) + "_" + timeToString(now) + cfg.error.suffix, cfg.error.directory)
 const logWriter = new LogWriter(getPrefix(cfg.info.prefix, now) + "_" + timeToString(now) + cfg.info.suffix, cfg.info.directory)
 
-const logger = createLogger(cfg.log, undefined, undefined, errorWriter.write, logWriter.write)
+const logger = createFileLogger(cfg.log, errorWriter.write, logWriter.write)
 const pool = createPool(cfg.db)
 const db = new PoolManager(pool)
 const checker = new NameChecker(getPrefix(cfg.file.prefix, new Date(), -1), ".txt")

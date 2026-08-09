@@ -17,10 +17,10 @@
     "config-plus": "^0.1.1",
     "dotenv": "^17.4.2",
     "import-service": "^0.2.6",
-    "logger-core": "^0.5.1",
+    "logger-core": "^0.5.2",
     "mysql2": "^3.23.2",
     "mysql2-core": "^0.3.8",
-    "onecore": "^0.6.0",
+    "onecore": "^0.6.2",
     "validation-core": "^1.1.1"
   },
   "devDependencies": {
