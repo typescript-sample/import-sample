@@ -1,8 +1,9 @@
-import { DB, MySQLWriter } from "mysql2-core"
+import { Pool } from "mysql2"
+import { MySQLWriter } from "mysql2-core"
 import { User, userModel } from "./user"
 
 export class UserWriter extends MySQLWriter<User> {
-  constructor(db: DB) {
-    super(db.execute, "userimport", userModel, true)
+  constructor(pool: Pool) {
+    super(pool, "userimport", userModel, true)
   }
 }
