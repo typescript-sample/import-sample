@@ -14,13 +14,13 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "config-plus": "^0.1.1",
-    "dotenv": "^18.0.4",
+    "config-plus": "^0.1.2",
+    "dotenv": "^18.0.10",
     "import-service": "^0.2.8",
-    "logger-core": "^0.5.2",
-    "mysql2": "^3.24.4",
-    "mysql2-core": "^0.3.10",
-    "onecore": "^0.6.7",
+    "logger-core": "^0.5.3",
+    "mysql2": "^3.24.6",
+    "mysql2-core": "^0.5.1",
+    "onecore": "^0.6.15",
     "validation-core": "^1.1.1"
   },
   "devDependencies": {
@@ -28,9 +28,9 @@
     "ts-loader": "^9.6.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3",
-    "webpack": "^5.111.1",
-    "webpack-bundle-analyzer": "^5.4.0",
-    "webpack-cli": "^7.2.3",
-    "webpack-dev-server": "^6.0.0"
+    "webpack": "^5.112.2",
+    "webpack-bundle-analyzer": "^5.4.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0"
   }
 }
